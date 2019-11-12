@@ -3,19 +3,22 @@
 
 int main() {
     float num_one, num_two;
-    int repeat = 0;
+    int repeat1 = 0, repeat2 = 0, repeat3 = 0;
     int running = 1;
     char operator = '+';
 
+    puts("Hello, Welcome to Calculator: ");
+
     while( running ) {
-        while( !repeat ) {
-            puts("Hello, Welcome to Calculator: ");
-            printf("Please insert number one");
-            repeat = scanf(" %f", &num_one);
+        while( (repeat1 + repeat2 + repeat3) < 3 ) {
+            repeat1 = 0, repeat2 = 0, repeat3 = 0;
+            printf("Please insert number one: ");
+            repeat1 = scanf(" %f", &num_one);
             printf("Please insert number two: ");
-            repeat = scanf(" %f", &num_two);
+            repeat2 = scanf(" %f", &num_two);
             printf("Please insert the operator to calculate the result: ");
-            repeat = scanf(" %c", &operator);
+            repeat3 = scanf(" %c", &operator);
+
         }
 
         //calculation process
@@ -23,7 +26,6 @@ int main() {
         switch (operator) {
             case '+' :
                 result = num_one + num_two;
-                //printf("Result %ld", num_one+num_two);
                 break;
             case '-':
                 result = num_one - num_two;
@@ -39,14 +41,7 @@ int main() {
         }
 
         printf("%.3f %c %.3f = %.3f \n", num_one, operator, num_two, result);
-        repeat = 0;
-
-        int stop;
-        puts("Please press 99 to exit or sth. else to continue :) \n");
-        scanf("%i", &stop);
-        if(stop == 99) {
-            exit(0);
-        }
+        repeat1 = 0, repeat2 = 0, repeat3 = 0;
     }
     return 0;
 }

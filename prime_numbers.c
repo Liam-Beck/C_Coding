@@ -2,14 +2,14 @@
 
 int main(){
 
-    int i, c; // check if i is prime number
+    printf("2\n");
 
-    printf("1\n");
-
-    for (i=3; i<23; i++){
+    for (int i=3; i<23; i++){
         int no_prime_number = 0;
 
-        for(c=2; c<i; c++){
+        //determine if i is prime number
+        //checking all smaller numbers c and testing for divisibility
+        for(int c=1; c<i; c=c+2){
 
             if (i % c == 0){
                 no_prime_number = 1;
@@ -17,7 +17,7 @@ int main(){
             }
         }
         if(no_prime_number == 0){
-            printf("%d \n", i);
+            printf("%d\n", i);
         }
     }
     return 0;
